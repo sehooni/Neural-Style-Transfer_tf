@@ -1,5 +1,5 @@
-# opencv
-opencv를 활용한 프로젝트 및 개념, 예제 정리 repo
+# Neural Style Transfer-tf
+opencv 및 tf를 활용한 Neural Style Transfer 프로젝트 및 개념, 예제 정리 repo
 
 ## 참고교재
 - OpenCV 4로 배우는 컴퓨터 비전과 머신 러닝(황선규)
