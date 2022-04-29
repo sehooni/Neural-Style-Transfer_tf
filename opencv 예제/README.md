@@ -11,7 +11,7 @@
     * matplotlib (2.2.2)
 * opencv-python (4.1.0.25)
     ```bash
-    pip install opencv-교재예제
+    pip install opencv-opencv 예제
     ```
 * Tensorflow (1.13.1)
     ```bash
