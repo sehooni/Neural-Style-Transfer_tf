@@ -13,7 +13,7 @@ opencv 및 tf.keras를 활용한 Neural Style Transfer 프로젝트 및 개념, 
 
 ### Purpose of Project
 1. 논문 구현을 하면서 제작한 [Jupyter Notebook file](https://github.com/sehooni/Neural-Style-Transfer_tf/blob/master/project/Neural_Style_Transfer_code.ipynb)
-을 python 형식으로 바꾸면서 코드를 조금더 간결화 한다.
+을 [python file](https://github.com/sehooni/Neural-Style-Transfer_tf/blob/master/project/Neural_Style_Transfer.py) 형식으로 바꾸면서 코드를 조금더 간결화 한다.
 2. 이후 실시간 영상에 적용할 수 있는 코드 작성한다. 다양한 예제들이 존재하지만 구성 코드와 환경, 목적에 따라 다르게 작동하므로 나만의 코드를 작성한다.
 3. 현재 논문에서 적용된 딥러닝 모델은 VGG19이다. 이후 다양한 모델들이 등장했는데, 시간적 여유가 존재한다면, 또 다른 딥러닝 모델을 적용하여 그 차이점 및 장단점을 확인한다.
 
