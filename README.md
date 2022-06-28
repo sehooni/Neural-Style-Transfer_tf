@@ -28,6 +28,7 @@ opencv 및 tf.keras를 활용한 Neural Style Transfer 프로젝트 및 개념, 
 ## Reference
 본 repository는 Opencv 기법 및 tf.keras가 적용된 'Neural-Style-Transfer' project이다.
 
+
 ### PAPER
 - [A Neural Algorithm of Artistic Style.2015](https://arxiv.org/abs/1508.06576) 에서 제시된 Mechanism을 이용하여 본 프로젝트를 진행한다.
 
@@ -35,3 +36,8 @@ opencv 및 tf.keras를 활용한 Neural Style Transfer 프로젝트 및 개념, 
 - OpenCV 4로 배우는 컴퓨터 비전과 머신 러닝(황선규)
   - [깃허브링크](https://github.com/sunkyoo/opencv4cvml)
 - OpenCV-Python으로 배우는 영상처리 및 응용
+
+
+----
+# 수정사항
+(22.06.28) [구성 tree 및 results upload 관련 issue](https://github.com/sehooni/Neural-Style-Transfer_tf/blob/master/project/data.md)
