@@ -93,9 +93,9 @@ def video_to_frames(video, path_output_dir):
 
 
 # Save results of process
-def save_result_video():
+def save_result_video(saving_point):
     try:
-        video_dir = './video_results/'
+        video_dir = saving_point
         # video.save('{}/{}'.format(video_dir, video_name))
         if not os.path.exists(video_dir):
             os.makedirs(video_dir)
@@ -107,7 +107,7 @@ def save_result_video():
         pass
 
 
-def main():
+def Neural_Style_Video(video_path, content_path, style_path, saving_point):
     print("--------- Neural Style Transfer to Video ---------\n")
     print("Eager execution: {}".format(tf.executing_eagerly()))
     # # when the tensorflow version is 1.x
@@ -115,15 +115,15 @@ def main():
     print("Provide the file path to a content image and style image below:")
 
     ## Set up some global values here
-    content_path = './image/'
-    style_path = './image/'
-    base_img_path = content_path + 'starry_night.jpg'
-    style_img_path = style_path + 'starry_night.jpg'
+    content_path = content_path
+    style_path = style_path
+    # base_img_path = './image/starry_night.jpg'
+    # style_img_path = './image/starry_night.jpg'
 
     plt.figure(figsize=(10, 10))
 
-    content_image = load_img(base_img_path)
-    style_image = load_img(style_img_path)
+    content_image = load_img(content_path)
+    style_image = load_img(style_path)
 
     plt.subplot(1, 2, 1)
     show_img(content_image, 'Content Image')
@@ -138,9 +138,9 @@ def main():
 
     # Way to get images from video.
     # print(cv2.__version__)
-    video_Dir = './Video/'
-    img_Dir = './image/content_img/'
-    video_to_frames(video_Dir + 'Travel_in_Europe.mp4', img_Dir)
+    video_Dir = video_path
+    img_Dir = content_path
+    video_to_frames(video_Dir, img_Dir)
     # vidcap = cv2.VideoCapture(video_Dir + "lalaland1.mp4")
     # print(vidcap.read())
     # success, image = vidcap.read()
@@ -156,7 +156,7 @@ def main():
 
 
     # Style Transfer Image Frames using TF-Hub and Save images to styled_image folder
-    content_path = './image/content_img/'
+    content_path = content_path
     style_path = './styled_image/'
     frames_list = os.listdir(content_path)
     for frame in frames_list:
@@ -170,7 +170,7 @@ def main():
 
 
     # Assemble Stylized Images into a Video
-    image_folder = './styled_image/'
+    image_folder = style_path
     # video_name = image_folder + '/lalaland2.avi'
     # video_results =
 
@@ -188,7 +188,8 @@ def main():
             # fourcc = cv2.VideoWriter_fourcc(*'DIVX')
             # c1 = save_result_video() + output_video_name +'.avi'
             # video = cv2.VideoWriter('{}'.format(save_result_video() + output_video_name +'.avi'), 0, 20, (width, height))  # FPS = 50
-            video = cv2.VideoWriter(save_result_video() + output_video_name + '.avi', 0, 20, (width, height))  # FPS = 20
+            video_result_dir = saving_point
+            video = cv2.VideoWriter(save_result_video(video_result_dir) + output_video_name + '.avi', 0, 20, (width, height))  # FPS = 20
             for image in images:
                 video.write(cv2.imread(os.path.join(image_folder, image)))
 
@@ -203,4 +204,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    video_Dir = './Video/Travel_in_Europe.mp4'
+    img_Dir = './image/content_img/'
+    style_path = './styled_image/'
+    saving_point = './video_results/'
+    Neural_Style_Video(video_Dir, img_Dir, style_path, saving_point)
