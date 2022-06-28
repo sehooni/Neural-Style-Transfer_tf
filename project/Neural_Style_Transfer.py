@@ -345,7 +345,7 @@ def save_result_image(img, img_name):
         pass
 
 
-def main():
+def Neural_Style_Transfer(Content_path, Style_Path):
     print("--------- Neural Style Transfer ---------\n")
     print("Eager execution: {}".format(tf.executing_eagerly()))
     # # when the tensorflow version is 1.x
@@ -353,8 +353,9 @@ def main():
     print("Provide the file path to a content image and style image below:")
 
     ## Set up some global values here
-    content_path = './image/Effel_Tower.jpg'
-    style_path = './image/Pillars_of_creation.jpg'
+    ## For example, You can insert the path in function like below.
+    content_path = Content_path
+    style_path = Style_Path
 
     plt.figure(figsize=(10, 10))
 
@@ -405,4 +406,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    content_path = './image/Seoul_Tower.jpg'
+    style_path = './image/van_Gogh_Starry_Night.jpg'
+    Neural_Style_Transfer(content_path, style_path)
